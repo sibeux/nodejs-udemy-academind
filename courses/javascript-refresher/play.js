@@ -28,3 +28,4 @@ console.log(addOne(2));
 console.log(addRandom());
 
 console.log(summarizeUser(nama, age, hasHobbies));
+console.log(`Namaku: ${nama}. Umurku: ${age}.`);
