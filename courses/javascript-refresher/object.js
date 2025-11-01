@@ -7,7 +7,7 @@ const person = {
     },
     // Cara 2
     salam() {
-        console.log("halo, aku sibe");
+        console.log("Halo, aku sibe");
     },
 };
 
