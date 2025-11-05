@@ -1,0 +1,15 @@
+{
+  "name": "nodejs-udemy-academind",
+  "version": "1.0.0",
+  "description": "Complete NodeJS Guide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon courses\\02-basic-nodejs\\app.js"
+  },
+  "author": "Sibeux",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
