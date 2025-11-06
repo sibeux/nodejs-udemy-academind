@@ -21,7 +21,7 @@ app.use("/add-playlist", (req, res, next) => {
     );
 });
 
-app.use("/playlist", (req, res, next) => {
+app.post("/playlist", (req, res, next) => {
     console.log("response body:", req.body);
     console.log("Playlist title:", req.body.title);
     res.redirect("/"); // Redirect to home page after form submission
