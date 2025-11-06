@@ -5,21 +5,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        .main-header {
+            width: 100%;
+            height: 3.5rem;
+            background-color: aquamarine;
+            padding: 0 1.5rem;
+        }
+
+        .main-header__nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-header__item-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-header__item {
+            margin: 0 1rem;
+            padding: 0;
+        }
+
+        .main-header__item a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            padding: 0 1rem;
+            line-height: 3.5rem;
+        }
+
+        .main-header__item a:hover,
+        .main-header__item a:active,
+        .main-header__item a.active {
+            color: tomato;
+        }
+
+        .product-form {
+            width: 30rem;
+            max-width: 90%;
+            margin: 2rem auto;
+        }
+
+        .form-control label,
+        .form-control input {
+            display: block;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .form-control input {
+            padding: 0.25rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            font: inherit;
+        }
+
+        button {
+            font: inherit;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #8b005d;
+            border-radius: 3px;
+            color: white;
+            background: #8b005d;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:active {
+            background: #ac0e77;
+            border-color: #ac0e77;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Shop</a></li>
-                <li><a href="/admin/add-product">Add Product</a></li>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">Shop</a></li>
+                <li class="main-header__item"><a class="active" href="/admin/add-product">Add Product</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <form action="/add-product" method="POST">
-            <div>
+        <form class="product-form" action="/admin/add-product" method="POST">
+            <div class="form-control">
                 <label for="title">Product Title</label>
                 <input type="text" id="title" name="title">
             </div>
