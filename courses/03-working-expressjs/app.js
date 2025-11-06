@@ -8,6 +8,7 @@ const adminRoutes = require("../../routes/course-03/admin");
 const shopRoutes = require("../../routes/course-03/shop");
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "..", "..", "public")));
 
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
