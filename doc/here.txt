@@ -1,0 +1,2 @@
+Semua folder di dalam folder "course" (01, 02, 03, dst), harus dianggap sebagi root folder.
+Artinya, peletakan file di dalam project nodejs aslinya (routes, mvc, and so on) ada di folder terluar dari proyek
