@@ -7,12 +7,13 @@ const router = express.Router();
 
 router.get("/", (req, res, next) => {
     // res.send("<h1>Hello from Express!</h1>"); // Auto setHeaders as HTML
-    console.log("shop.js adminData.products:", adminData.products);
+    const products = adminData.products;
+    console.log("shop.js adminData.products:", products);
     // res.sendFile(
     // // rootDir merupakan path dari app.js
     //     path.join(rootDir, "..", "..", "views", "course-03", "shop.html")
     // );
-    res.render("shop", { prods: adminData.products, docTitle: "Shop" });
+    res.render("shop", { prods: products, docTitle: "Shop" });
 });
 
 module.exports = router;

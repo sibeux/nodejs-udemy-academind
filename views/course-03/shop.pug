@@ -3,7 +3,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title My Shop
+        title #{docTitle}
         link(rel="stylesheet", href="/css/course-03/main.css")
     body
         header.main-header 
@@ -13,3 +13,19 @@ html(lang="en")
                         a.active(href="/") Shop
                     li.main-header__item
                         a(href="/admin/add-product") Add Product
+        main
+            if prods.length > 0
+                .grid
+                    each product in prods 
+                        article.card.product-item 
+                            header.card__header
+                                h1.product__title #{product.title}
+                            div.card__image
+                                img(src="https://images-na.ssl-images-amazon.com/images/I/51N-u8AsmdL._SX379_BO1,204,203,200_.jpg", alt="A Book")
+                            div.card__content
+                                h2.product__prive $19.99
+                                p.product__description This is a great book!
+                            .card__actions
+                                button.btn Add to Cart
+            else
+                h2 No Products Found!
