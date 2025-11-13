@@ -1,21 +1,23 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
-const expressHbs = require("express-handlebars");
+// const expressHbs = require("express-handlebars");
 
 const app = express();
 
-app.engine(
-    "hbs",
-    expressHbs({
-        layoutsDir: "views/layouts/course-04/",
-        defaultLayout: "main-layout",
-        extname: "hbs",
-    })
-);
-app.set("view engine", "hbs");
+// Pakai Handlebars sebagai View Engine
+// app.engine(
+//     "hbs",
+//     expressHbs({
+//         layoutsDir: "views/layouts/course-04/",
+//         defaultLayout: "main-layout",
+//         extname: "hbs",
+//     })
+// );
+// app.set("view engine", "hbs");
 // Namanya bebas, nanti ext menyesuaikan
 // app.engine('handlebars', expressHbs());
+app.set("view engine", "ejs");
 // app.set("view engine", "handlebars");
 // app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "..", "..", "views", "course-03"));
