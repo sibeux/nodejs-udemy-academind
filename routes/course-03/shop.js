@@ -13,7 +13,7 @@ router.get("/", (req, res, next) => {
     // // rootDir merupakan path dari app.js
     //     path.join(rootDir, "..", "..", "views", "course-03", "shop.html")
     // );
-    res.render("shop", { prods: products, docTitle: "Shop" });
+    res.render("shop", { prods: products, pageTitle: "Shop", path: "/" });
 });
 
 module.exports = router;

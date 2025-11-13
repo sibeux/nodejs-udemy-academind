@@ -15,7 +15,10 @@ router.get("/add-product", (req, res, next) => {
     //     // rootDir merupakan path dari app.js
     //     path.join(rootDir, "..", "..", "views", "course-03", "add-product.html")
     // );
-    res.render("add-product", { pageTitle: "Add Product" });
+    res.render("add-product", {
+        pageTitle: "Add Product",
+        path: "/admin/add-product",
+    });
 });
 
 // /admin/add-product => POST
