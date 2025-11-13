@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
+
+
 module.exports = class Product {
     constructor(title) {
         this.title = title;
@@ -28,7 +30,7 @@ module.exports = class Product {
     }
 
     // Dikasih "static" biar bisa langsung dipanggil Product.fetchAll()
-    static fetchAll() {
+    static fetchAll(cb) {
         const p = path.join(
             path.dirname(require.main.filename),
             "..",
@@ -39,9 +41,9 @@ module.exports = class Product {
         );
         fs.readFile(p, (err, fileContent) => {
             if (err) {
-                return [];
+                cb([]);
             }
-            return JSON.parse(fileContent);
+            cb(JSON.parse(fileContent));
         });
     }
 };

@@ -28,18 +28,19 @@ exports.postAddProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-    const products = Product.fetchAll();
-    // res.send("<h1>Hello from Express!</h1>"); // Auto setHeaders as HTML
-    console.log("shop.js adminData.products:", products);
-    // res.sendFile(
-    // // rootDir merupakan path dari app.js
-    //     path.join(rootDir, "..", "..", "views", "course-03", "shop.html")
-    // );
-    res.render("shop", {
-        prods: products,
-        pageTitle: "Shop",
-        path: "/",
-        hasProduct: products.length > 0,
-        activeShop: true,
+    Product.fetchAll((products) => {
+        // res.send("<h1>Hello from Express!</h1>"); // Auto setHeaders as HTML
+        console.log("shop.js adminData.products:", products);
+        // res.sendFile(
+        // // rootDir merupakan path dari app.js
+        //     path.join(rootDir, "..", "..", "views", "course-03", "shop.html")
+        // );
+        res.render("shop", {
+            prods: products,
+            pageTitle: "Shop",
+            path: "/",
+            hasProduct: products.length > 0,
+            activeShop: true,
+        });
     });
 };
