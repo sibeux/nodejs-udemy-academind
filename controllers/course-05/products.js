@@ -1,7 +1,7 @@
 const path = require("path");
 const rootDir = require("../../util/course-03/path");
 
-const products = [];
+const Product = require("../../models/course-05/product");
 
 exports.getAddProduct = (req, res, next) => {
     // res.send(
@@ -22,11 +22,13 @@ exports.getAddProduct = (req, res, next) => {
 exports.postAddProduct = (req, res, next) => {
     // console.log("response body:", req.body);
     // console.log("product title:", req.body.title);
-    products.push({ title: req.body.title });
+    const product = new Product(req.body.title);
+    product.save();
     res.redirect("/"); // Redirect to home page after form submission
 };
 
 exports.getProducts = (req, res, next) => {
+    const products = Product.fetchAll();
     // res.send("<h1>Hello from Express!</h1>"); // Auto setHeaders as HTML
     console.log("shop.js adminData.products:", products);
     // res.sendFile(
