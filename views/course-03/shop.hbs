@@ -1,53 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ pageTitle }}</title>
-    <!-- perlu tambahan import dari app.js untuk css -->
-    <link rel="stylesheet" href="/css/course-03/main.css">
-</head>
-
-<body>
-    <header class="main-header">
-        <nav class="main-header__nav">
-            <ul class="main-header__item-list">
-                <li class="main-header__item"><a class="active" href="/">Shop</a></li>
-                <li class="main-header__item"><a href="/admin/add-product">Add Product</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        {{#if hasProduct }}
-            <div class="grid">
-                {{#each prods}}
-                    <article class="card product-item">
-                        <header class="card__header">
-                            <h1>
-                                {{ this.title }}
-                            </h1>
-                            <div class="card__image">
-                                <img src="https://images-na.ssl-images-amazon.com/images/I/51N-u8AsmdL._SX379_BO1,204,203,200_.jpg"
-                                    alt="A Book">
-                            </div>
-                            <div class="card__content">
-                                <h2 class="product__price">
-                                    $19.99
-                                </h2>
-                            </div>
-                            <div class="card__actions">
-                                <button class="btn">Add to Cart</button>
-                            </div>
-                        </header>
-                    </article>
-                {{/each}}
-            </div>
-        {{ else }}
-            <h1>No Products Found!</h1>
-        {{/if }}
-    </main>
-</body>
-
-</html>
+<main>
+    {{#if hasProduct }}
+    <div class="grid">
+        {{#each prods}}
+        <article class="card product-item">
+            <header class="card__header">
+                <h1>
+                    {{ this.title }}
+                </h1>
+                <div class="card__image">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/51N-u8AsmdL._SX379_BO1,204,203,200_.jpg"
+                        alt="A Book">
+                </div>
+                <div class="card__content">
+                    <h2 class="product__price">
+                        $19.99
+                    </h2>
+                </div>
+                <div class="card__actions">
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </header>
+        </article>
+        {{/each}}
+    </div>
+    {{ else }}
+    <h1>No Products Found!</h1>
+    {{/if }}
+</main>
