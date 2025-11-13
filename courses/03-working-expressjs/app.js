@@ -1,10 +1,16 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
+const expressHbs = require("express-handlebars");
 
 const app = express();
 
-app.set("view engine", "pug");
+app.engine('hbs', expressHbs());
+app.set("view engine", "hbs");
+// Namanya bebas, nanti ext menyesuaikan
+// app.engine('handlebars', expressHbs());
+// app.set("view engine", "handlebars");
+// app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "..", "..", "views", "course-03"));
 
 const adminData = require("../../routes/course-03/admin");
